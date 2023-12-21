@@ -57,6 +57,10 @@ export default function Container({ onCreate, placeholder, button, id = null }) 
             button={button}
             onSubmit={handleSubmit}
             />
+            {status === LOAD_STATUS.ERROR && (
+                <Alert status={status} message={message} />
+            )}
+            {status === LOAD_STATUS.PROGRESS && <Loader />}
         </Grid>
     )
 }
